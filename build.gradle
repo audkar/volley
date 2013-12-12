@@ -9,6 +9,7 @@ buildscript {
 }
 
 apply plugin: 'android-library'
+apply plugin: 'maven'
 
 repositories {
     mavenCentral()
@@ -17,6 +18,11 @@ repositories {
 android {
     compileSdkVersion 18
     buildToolsVersion = "19.0"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 14
+    }
 
     sourceSets {
 
@@ -36,6 +42,19 @@ android {
             res.srcDirs       = ["tests/res"]
             resources.srcDirs = ["tests/src"]
             java.srcDirs      = ["tests/src"]
+        }
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: deploayerUrl3rdparty){
+                 authentication(userName: deployerUser, password: deployerPassword) 
+            }
+            pom.groupId = 'com.android'
+            pom.artifactId = 'volley'
+            pom.version = '1.0.2'
         }
     }
 }
