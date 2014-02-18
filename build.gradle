@@ -45,7 +45,7 @@ uploadArchives {
             }
             pom.groupId = 'com.android'
             pom.artifactId = 'volley'
-            pom.version = '1.0.2'
+            pom.version = '1.0.3'
         }
     }
 }

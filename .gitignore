@@ -1,5 +1,8 @@
+.idea/
 bin
 gen
 .gradle
 build
 .settings
+local.properties
+*.iml
